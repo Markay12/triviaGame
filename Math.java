@@ -29,12 +29,25 @@ public class Math{
         // if statements to choose which question to print
 
         if (questionNum == 1){
-            return "Question1";
+            return "What is 1+1?: ";
         } 
         else { 
             return "";
         }
 
     } // end of questions method
+
+	public boolean checkAnswer(int questionNumber, int answer){
+
+        if (questionNumber == 1){
+            if (answer == 2){
+                return true;
+            }
+            else { return false; }
+        }
+
+        else { return false; }
+        
+    }
 
 }
