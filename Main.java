@@ -4,6 +4,8 @@ public class Main{
     public static void main(String[] args) {
 
         int correctMathQuestions = 0;
+        int questionsAnswered = 0;
+        int correctProgrammingQuestions = 0;
 
         
         // to set and create names for the player
@@ -44,21 +46,29 @@ public class Main{
                     // start of math questions!
                     
                     System.out.printf("\nNice choice! %s, I'm a big fan of math!\n\n", player.getName());
-                    Math mathQuest = new Math();
-                    int randomQuestion = mathQuest.randomNum();
-                    System.out.print("\n" + mathQuest.questions(randomQuestion)); // print out question
-                    int answer = console.nextInt();
-                    if (mathQuest.checkAnswer(randomQuestion, answer)){
-                        if (correctMathQuestions >= 5){ 
-                            System.out.printf("\nNice Job! You got 5 right!");
-                            break;
+
+                    while(correctMathQuestions != 5){
+                        Math mathQuest = new Math();
+                        int randomQuestion = mathQuest.randomNum();
+                        System.out.print("\n" + mathQuest.questions(randomQuestion)); // print out question
+                        int answer = console.nextInt();
+                        if (mathQuest.checkAnswer(randomQuestion, answer)){
+                            if (correctMathQuestions >= 5){ 
+                                System.out.printf("\nNice Job! You got 5 right!");
+                                break;
+                            }
+                            correctMathQuestions++;
+                            questionsAnswered++;
+                            if(correctMathQuestions < 5){
+                                System.out.printf("\nCorrect! You have %d right! %d more to go!\n", correctMathQuestions, 5 -   correctMathQuestions);
+                            }
+                            else { System.out.print("\n\nCorrect!\n\n"); }
+
                         }
-                        correctMathQuestions++;
-                        System.out.printf("\nCorrect! You have %d right! %d more to go!\n", correctMathQuestions, 5 - correctMathQuestions);
-                        
-                    }
-                    else { 
-                        System.out.println("\nDarn, thats not quite it");
+                        else { 
+                            questionsAnswered++;
+                            System.out.println("\nDarn, thats not quite it");
+                        }
                     }
 
                     break;
@@ -83,7 +93,7 @@ public class Main{
         } while (command != 'q' && correctMathQuestions != 5);
 
         if (correctMathQuestions == 5){
-            System.out.printf("\nCongratulations! You got 5 math questions right\n\n");
+            System.out.printf("\nCongratulations! You got %d questions right out of %d!\n\n", correctMathQuestions, questionsAnswered);
         }
         else { System.out.printf("\nGame over..."); }
 
