@@ -51,7 +51,7 @@ public class Main{
                         Math mathQuest = new Math();
                         int randomQuestion = mathQuest.randomNum();
                         System.out.print("\n" + mathQuest.questions(randomQuestion)); // print out question
-                        int answer = console.nextInt();
+                        String answer = console.next();
                         if (mathQuest.checkAnswer(randomQuestion, answer)){
                             if (correctMathQuestions >= 5){ 
                                 System.out.printf("\nNice Job! You got 5 right!");
