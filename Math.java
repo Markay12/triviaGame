@@ -24,7 +24,7 @@ public class Math{
 
     }
 
-    public String questions(int questionNum){
+    public String mathQuestions(int questionNum){
 
         // if statements to choose which question to print
 
