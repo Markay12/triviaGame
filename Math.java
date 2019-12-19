@@ -64,64 +64,64 @@ public class Math{
 
     } // end of questions method
 
-	public boolean checkAnswer(int questionNumber, int answer){
+	public boolean checkAnswer(int questionNumber, String answer){
 
         if (questionNumber == 1){
-            if (answer == 2){
+            if (answer == "2"){
                 return true;
             }
             else { return false; }
         }
         else if (questionNumber == 2){
-            if(answer == 48){
+            if(answer == "48"){
                 return true;
             }
             else { return false; }
         }
         else if (questionNumber == 3){
-            if(answer == 0){
+            if(answer == "0"){
                 return true;
             }
             else { return false; }
         }
         else if (questionNumber == 4){
-            if(answer == 8){
+            if(answer == "8"){
                 return true;
             }
             else { return false; }
         }
         else if (questionNumber == 5){
-            if (answer == 38){
+            if (answer == "38"){
                 return true;
             }
             else { return false; }
         }
         else if (questionNumber == 6){
-            if(answer == 14){
+            if(answer == "14"){
                 return true;
             }
             else { return false; }
         }
         else if (questionNumber == 7){
-            if(answer == 126){
+            if(answer == "126"){
                 return true;
             }
             else { return false; }
         }
         else if (questionNumber == 8){
-            if(answer == 180){
+            if(answer == "180"){
                 return true;
             }
             else { return false; }
         }
         else if (questionNumber == 9){
-            if(answer == 60){
+            if(answer == "60"){
                 return true;
             }
             else { return false; }
         }
         else if (questionNumber == 10){
-            if (answer == 25){
+            if (answer == "25"){
                 return true;
             }
             else { return false; }
