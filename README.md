@@ -3,12 +3,12 @@ Trivia Game to Test your Skills in certain Subjects
 
 ## __Table Of Contents__
 
-* [Class Files]()
-* [Possible Additions]()
+* [Class Files](https://github.com/Markay12/triviaGame#class-files)
+* [Possible Additions](https://github.com/Markay12/triviaGame#possible-additions)
 
 
 
-### *Class Files*
+## *Class Files*
 ---
 ### *Main.java*
 This file is the main method for the program and runs all of the questions and answers
@@ -16,7 +16,7 @@ This file is the main method for the program and runs all of the questions and a
 * Main while loops to make sure that they have to answer 5 questions before it is hard
 
 
-### *information.java
+### *information.java*
 This file contains all the information about the user which can be displayed and used throughout the main program
 1. information, method used to initialize the name var
 2. setName, sets the name of the user
@@ -34,4 +34,5 @@ This file contains all of the questions and answers for the math questions inclu
 
 
 ## __Possible Additions__
+---
 * Add more class files to have harder questions. Same methods but requires an if statment and question to choose the severtiy of questions
