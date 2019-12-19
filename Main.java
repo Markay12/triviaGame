@@ -6,6 +6,7 @@ public class Main{
         int correctMathQuestions = 0;
         int questionsAnswered = 0;
         int correctProgrammingQuestions = 0;
+        double percent = 0;
 
         
         // to set and create names for the player
@@ -50,7 +51,7 @@ public class Main{
                     while(correctMathQuestions != 5){
                         Math mathQuest = new Math();
                         int randomQuestion = mathQuest.randomNum();
-                        System.out.print("\n" + mathQuest.questions(randomQuestion)); // print out question
+                        System.out.print("\n" + mathQuest.mathQuestions(randomQuestion)); // print out question
                         String answer = console.next();
                         if (mathQuest.checkAnswer(randomQuestion, answer)){
                             if (correctMathQuestions >= 5){ 
@@ -72,6 +73,39 @@ public class Main{
                     }
 
                     break;
+
+                case 'p':
+
+                    while (correctProgrammingQuestions != 5){ 
+
+                        Programming programQuest = new Programming();
+                        int randomProgrammingQuestion = programQuest.programRandomNum();
+                        System.out.print("\n[Enter 1 for True or 2 for False]\n" + programQuest.programmingQuestions(randomProgrammingQuestion));
+                        int programAnswer = console.nextInt();
+                        if(programQuest.checkProgrammingAnswer(randomProgrammingQuestion, programAnswer)){
+                            if (correctProgrammingQuestions == 5){
+                                System.out.print("\nNice job! You got 5 right!");
+                                break;
+                            }
+                            correctProgrammingQuestions++;
+                            questionsAnswered++;
+                            if(correctProgrammingQuestions < 5){
+                                System.out.printf("\nCorrect! You have %d right! Only %d more to go!\n", correctProgrammingQuestions, 5 - correctProgrammingQuestions);
+                            }
+
+                            else { System.out.print("\n\nCorrect!\n\n"); }
+
+                        }
+                        else {
+                            questionsAnswered++;
+                            System.out.println("\nDarn, that's not quite it");
+
+                        }
+
+
+                    }
+
+                    break;
                     
 
                 case '?': 
@@ -90,10 +124,15 @@ public class Main{
             }
 
 
-        } while (command != 'q' && correctMathQuestions != 5);
+        } while (command != 'q' && correctMathQuestions != 5 && correctProgrammingQuestions != 5);
 
         if (correctMathQuestions == 5){
-            System.out.printf("\nCongratulations! You got %d questions right out of %d!\n\n", correctMathQuestions, questionsAnswered);
+            percent = correctMathQuestions/questionsAnswered;
+            System.out.printf("\nCongratulations! You got %d questions right out of %d! For a percentage of %.2f%\n\n", correctMathQuestions, questionsAnswered, percent);
+        }
+        else if (correctProgrammingQuestions == 5){
+            percent = (correctProgrammingQuestions/questionsAnswered);
+            System.out.printf("\nCongratulations! You got %d questions right out of %d! For a percentage of %f %\n\n", correctProgrammingQuestions, questionsAnswered, percent);
         }
         else { System.out.printf("\nGame over..."); }
 
