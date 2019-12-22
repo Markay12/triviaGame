@@ -1,7 +1,5 @@
 import java.util.*;
 
-
-
 public class Programming{
 
     private char answer;
@@ -16,7 +14,7 @@ public class Programming{
 
     public int programRandomNum(){
 
-        int questionsSize = 1;
+        int questionsSize = 2;
 
         Random rand = new Random();
 
@@ -33,6 +31,9 @@ public class Programming{
         if (questionNum == 1){
             return "Is a class and method in Java the same thing?: ";
         }
+        else if (questionNum == 2){
+            return "Was the Programming language Python influenced by the Monty Python series?: ";
+        }
         else { return ""; }
 
     }
@@ -41,6 +42,12 @@ public class Programming{
 
         if (questionNum == 1){
             if (answer == 2){
+                return true;
+            }
+            else { return false; }
+        }
+        if (questionNum == 2){
+            if (answer == 1){
                 return true;
             }
             else { return false; }
