@@ -6,7 +6,8 @@ public class Main{
         int correctMathQuestions = 0;
         int questionsAnswered = 0;
         int correctProgrammingQuestions = 0;
-        double percent = 0;
+        float percent;
+        int quit = 0;
 
         
         // to set and create names for the player
@@ -48,11 +49,11 @@ public class Main{
                     
                     System.out.printf("\nNice choice! %s, I'm a big fan of math!\n\n", player.getName());
 
-                    while(correctMathQuestions != 5){
+                    do{
                         Math mathQuest = new Math();
                         int randomQuestion = mathQuest.randomNum();
                         System.out.print("\n" + mathQuest.mathQuestions(randomQuestion)); // print out question
-                        String answer = console.next();
+                        int answer = console.nextInt();
                         if (mathQuest.checkAnswer(randomQuestion, answer)){
                             if (correctMathQuestions >= 5){ 
                                 System.out.printf("\nNice Job! You got 5 right!");
@@ -70,19 +71,25 @@ public class Main{
                             questionsAnswered++;
                             System.out.println("\nDarn, thats not quite it");
                         }
-                    }
+                    } while (correctMathQuestions != 5);
 
                     break;
 
                 case 'p':
 
-                    while (correctProgrammingQuestions != 5){ 
+                    do { 
 
                         Programming programQuest = new Programming();
                         int randomProgrammingQuestion = programQuest.programRandomNum();
-                        System.out.print("\n[Enter 1 for True or 2 for False]\n" + programQuest.programmingQuestions(randomProgrammingQuestion));
+                        System.out.print("\n[Enter 1 for True or 2 for False and 3 to quit]\n" + programQuest.programmingQuestions(randomProgrammingQuestion));
                         int programAnswer = console.nextInt();
+                        if (programAnswer == 3){
+                            quit++;
+                        }
                         if(programQuest.checkProgrammingAnswer(randomProgrammingQuestion, programAnswer)){
+                            if (randomProgrammingQuestion == 2){
+                                System.out.print("\n\nThis is a great story! And a true one! The person who led to the creation of Python was a great fan of Monty Python and got his naming inspiration from it.\n\n");
+                            }
                             if (correctProgrammingQuestions == 5){
                                 System.out.print("\nNice job! You got 5 right!");
                                 break;
@@ -90,20 +97,24 @@ public class Main{
                             correctProgrammingQuestions++;
                             questionsAnswered++;
                             if(correctProgrammingQuestions < 5){
-                                System.out.printf("\nCorrect! You have %d right! Only %d more to go!\n", correctProgrammingQuestions, 5 - correctProgrammingQuestions);
+                                System.out.printf("\n---------------------------------------\nCorrect! You have %d right! Only %d more to go!\n---------------------------------------\n", correctProgrammingQuestions, 5 - correctProgrammingQuestions);
                             }
 
                             else { System.out.print("\n\nCorrect!\n\n"); }
 
                         }
                         else {
-                            questionsAnswered++;
-                            System.out.println("\nDarn, that's not quite it");
+                            if (programAnswer != 3){
+                                questionsAnswered++;
+                                System.out.println("\nDarn, that's not quite it");
+                            } else {
+                                System.out.println("\nQuitting Programming Questions\n---------------------------------\n\n[Press q to quit]\n");
+                            }
 
                         }
 
 
-                    }
+                    } while (correctProgrammingQuestions != 5 && quit != 1);
 
                     break;
                     
@@ -127,14 +138,14 @@ public class Main{
         } while (command != 'q' && correctMathQuestions != 5 && correctProgrammingQuestions != 5);
 
         if (correctMathQuestions == 5){
-            percent = correctMathQuestions/questionsAnswered;
-            System.out.printf("\nCongratulations! You got %d questions right out of %d! For a percentage of %.2f%\n\n", correctMathQuestions, questionsAnswered, percent);
+            percent = (correctMathQuestions * 100.0f) / questionsAnswered;
+            System.out.printf("\nCongratulations! You got %d questions right out of %d!\n\n", correctMathQuestions, questionsAnswered, percent);
         }
         else if (correctProgrammingQuestions == 5){
-            percent = (correctProgrammingQuestions/questionsAnswered);
-            System.out.printf("\nCongratulations! You got %d questions right out of %d! For a percentage of %f %\n\n", correctProgrammingQuestions, questionsAnswered, percent);
+            percent = (correctProgrammingQuestions * 100.0f) / questionsAnswered;
+            System.out.printf("\nCongratulations! You got %d questions right out of %d!\n\n", correctProgrammingQuestions, questionsAnswered);
         }
-        else { System.out.printf("\nGame over..."); }
+        else { System.out.printf("\nGame over...\n "); }
 
 
         console.close(); // used to close console input
