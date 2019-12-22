@@ -5,7 +5,7 @@ Trivia Game to Test your Skills in certain Subjects
 
 * [Class Files](https://github.com/Markay12/triviaGame#class-files)
 * [Possible Additions](https://github.com/Markay12/triviaGame#possible-additions)
-
+* [Version Updates]()
 
 
 ## *Class Files*
@@ -29,10 +29,19 @@ This file contains all of the questions and answers for the math questions inclu
 2. Questions, holds all of the main questions
 3. checkAnswer, checks to see if the right answer is given
 
-
-
+### *Programming.java*
+This file contains all of the questions and answers for the programming question including these methods
+1. RandomNum - to choose a random question number
 
 
 ## __Possible Additions__
 ---
 * Add more class files to have harder questions. Same methods but requires an if statment and question to choose the severtiy of questions
+
+
+## __Version Updates__
+
+* *Version 1.0.0* - Method to ask users which quiz they would like to take
+* *Version 1.0.1* - Math method has been added which allows users to complete math questions to win
+* *Version 1.0.2* - Programming method has been added which allows users to complete programming questions to win
+* *Version 1.0.3* - Updated look for Programming questions to better the user experience
