@@ -5,7 +5,7 @@ Trivia Game to Test your Skills in certain Subjects
 
 * [Class Files](https://github.com/Markay12/triviaGame#class-files)
 * [Possible Additions](https://github.com/Markay12/triviaGame#possible-additions)
-* [Version Updates]()
+* [Version Updates](https://github.com/Markay12/triviaGame#version-updates)
 
 
 ## *Class Files*
@@ -40,7 +40,7 @@ This file contains all of the questions and answers for the programming question
 
 
 ## __Version Updates__
-
+---
 * *Version 1.0.0* - Method to ask users which quiz they would like to take
 * *Version 1.0.1* - Math method has been added which allows users to complete math questions to win
 * *Version 1.0.2* - Programming method has been added which allows users to complete programming questions to win
