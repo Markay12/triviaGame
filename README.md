@@ -45,3 +45,5 @@ This file contains all of the questions and answers for the programming question
 * *Version 1.0.1* - Math method has been added which allows users to complete math questions to win
 * *Version 1.0.2* - Programming method has been added which allows users to complete programming questions to win
 * *Version 1.0.3* - Updated look for Programming questions to better the user experience
+* *Version 1.0.4* - Completed Programming methods and questions
+* *Version 1.0.5* - Added user readability to math method in Main.java as well as making sure that a user can exit the math quiz in the same manner as exiting the programming quiz
