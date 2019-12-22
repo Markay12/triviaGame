@@ -88,7 +88,7 @@ public class Main{
                         }
                         if(programQuest.checkProgrammingAnswer(randomProgrammingQuestion, programAnswer)){
                             if (randomProgrammingQuestion == 2){
-                                System.out.print("\n\nThis is a great story! And a true one! The person who led to the creation of Python was a great fan of Monty Python and got his naming inspiration from it.\n\n");
+                                System.out.print("\n\nThis is a great story! And a true one! The person who led to the creation of Python was a great fan of Monty Python and got his naming inspiration from it. The show was more specifically named Monty Python's Flying Circus, a comedy series from the seventies.\n\n");
                             }
                             if (correctProgrammingQuestions == 5){
                                 System.out.print("\nNice job! You got 5 right!");
@@ -104,11 +104,24 @@ public class Main{
 
                         }
                         else {
-                            if (programAnswer != 3){
+                            if (programAnswer != 3 && randomProgrammingQuestion != 3 && randomProgrammingQuestion != 8 && randomProgrammingQuestion != 10){
                                 questionsAnswered++;
                                 System.out.println("\nDarn, that's not quite it");
-                            } else {
+                            } 
+                            else if (programAnswer == 3){
                                 System.out.println("\nQuitting Programming Questions\n---------------------------------\n\n[Press q to quit]\n");
+                            }
+                            else if (randomProgrammingQuestion == 3){
+                                questionsAnswered++;
+                                System.out.print("\n\nThat was close, however, in Python the correct use of this statement is 'elif'\n\n");
+                            }
+                            else if (randomProgrammingQuestion == 8){
+                                questionsAnswered++;
+                                System.out.print("\n\nIn order to prevent confusion, some rules are applied to the naming of identifiers. For example, identifiers are not allowed to have blanks such as \"Total Cost.\" Identifiers cannot be named after reserved words such as int, float, const, enum, etc. Special symbols such as \"$\" and \"@\" are not allowed.\n\n");
+                            }
+                            else if (randomProgrammingQuestion == 10){
+                                questionsAnswered++;
+                                System.out.print("\n\nUnless you enjoy having your system security open to everyone, involuntarily e-mailing things to friends and business associates, losing personal data and have your disk formatted when you least expect it.\n\n");
                             }
 
                         }
