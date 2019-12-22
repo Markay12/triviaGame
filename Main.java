@@ -52,7 +52,7 @@ public class Main{
                     do{
                         Math mathQuest = new Math();
                         int randomQuestion = mathQuest.randomNum();
-                        System.out.print("\n[Enter 000 to quit]\n");
+                        System.out.print("\n[Enter 00 to quit]\n");
                         System.out.print("\n" + mathQuest.mathQuestions(randomQuestion)); // print out question
                         int answer = console.nextInt();
                         if (mathQuest.checkAnswer(randomQuestion, answer)){
@@ -68,7 +68,7 @@ public class Main{
                             else { System.out.print("\n\nCorrect!\n\n"); }
 
                         }
-                        else if (answer == 000){
+                        else if (answer == 00){
                             System.out.print("\n[ENTER 'q' to exit out of the program]\n\n");
                             break;
                         } 
