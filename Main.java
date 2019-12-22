@@ -52,6 +52,7 @@ public class Main{
                     do{
                         Math mathQuest = new Math();
                         int randomQuestion = mathQuest.randomNum();
+                        System.out.print("\n[Enter 000 to quit]\n");
                         System.out.print("\n" + mathQuest.mathQuestions(randomQuestion)); // print out question
                         int answer = console.nextInt();
                         if (mathQuest.checkAnswer(randomQuestion, answer)){
@@ -62,14 +63,18 @@ public class Main{
                             correctMathQuestions++;
                             questionsAnswered++;
                             if(correctMathQuestions < 5){
-                                System.out.printf("\nCorrect! You have %d right! %d more to go!\n", correctMathQuestions, 5 -   correctMathQuestions);
+                                System.out.printf("\n---------------------------------------------\nCorrect! You have %d right! Only %d more to go!\n---------------------------------------------\n", correctMathQuestions, 5 -   correctMathQuestions);
                             }
                             else { System.out.print("\n\nCorrect!\n\n"); }
 
                         }
-                        else { 
+                        else if (answer == 000){
+                            System.out.print("\n[ENTER 'q' to exit out of the program]\n\n");
+                            break;
+                        } 
+                        else {
                             questionsAnswered++;
-                            System.out.println("\nDarn, thats not quite it");
+                            System.out.println("\n------------------------\nDarn, thats not quite it\n------------------------\n");
                         }
                     } while (correctMathQuestions != 5);
 
@@ -97,7 +102,7 @@ public class Main{
                             correctProgrammingQuestions++;
                             questionsAnswered++;
                             if(correctProgrammingQuestions < 5){
-                                System.out.printf("\n---------------------------------------\nCorrect! You have %d right! Only %d more to go!\n---------------------------------------\n", correctProgrammingQuestions, 5 - correctProgrammingQuestions);
+                                System.out.printf("\n---------------------------------------------\nCorrect! You have %d right! Only %d more to go!\n---------------------------------------------\n", correctProgrammingQuestions, 5 - correctProgrammingQuestions);
                             }
 
                             else { System.out.print("\n\nCorrect!\n\n"); }
