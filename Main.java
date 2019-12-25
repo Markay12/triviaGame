@@ -6,6 +6,7 @@ public class Main{
         int correctMathQuestions = 0;
         int questionsAnswered = 0;
         int correctProgrammingQuestions = 0;
+        int correctGrammarQuestions = 0;
         float percent;
         int quit = 0;
 
@@ -56,12 +57,12 @@ public class Main{
                         System.out.print("\n" + mathQuest.mathQuestions(randomQuestion)); // print out question
                         int answer = console.nextInt();
                         if (mathQuest.checkAnswer(randomQuestion, answer)){
+                            correctMathQuestions++;
+                            questionsAnswered++;
                             if (correctMathQuestions >= 5){ 
                                 System.out.printf("\nNice Job! You got 5 right!");
                                 break;
                             }
-                            correctMathQuestions++;
-                            questionsAnswered++;
                             if(correctMathQuestions < 5){
                                 System.out.printf("\n---------------------------------------------\nCorrect! You have %d right! Only %d more to go!\n---------------------------------------------\n", correctMathQuestions, 5 -   correctMathQuestions);
                             }
@@ -135,6 +136,44 @@ public class Main{
                     } while (correctProgrammingQuestions != 5 && quit != 1);
 
                     break;
+
+                
+                case 'g':
+
+                    do {
+
+                        Grammar grammarQuest = new Grammar();
+                        int randomGrammarQuestion = grammarQuest.randomNum();
+                        System.out.print("\n[Enter 00 to quit]\n");
+                        System.out.print(grammarQuest.grammarQuestions(randomGrammarQuestion));
+                        int answer = console.nextInt();
+                        if (grammarQuest.checkAnswer(randomGrammarQuestion, answer)){ 
+                            correctGrammarQuestions++;
+                            questionsAnswered++;
+                            if (correctGrammarQuestions == 5){
+                                System.out.print("\nAwesome! You got 5 grammar questions right!\n");
+                                break;
+                            }
+                            if(correctGrammarQuestions < 5){
+                                System.out.printf("\n---------------------------------------------\nCorrect! You have %d right! Only %d more to go!\n---------------------------------------------\n", correctGrammarQuestions, 5 -   correctGrammarQuestions);
+                            }
+                            else { System.out.print("\n\nCorrect!\n\n"); }
+
+                        }
+                        else if (answer == 00){
+                            System.out.print("\n\n[ENTER 'q' to quit out of the game]\n\n");
+                            break;
+                        }
+                        else {
+                            questionsAnswered++;
+                            System.out.print("\nDarn, that's not quite it\n");
+                        }
+
+
+
+                    } while (correctGrammarQuestions != 5);
+
+                    break;
                     
 
                 case '?': 
@@ -153,7 +192,7 @@ public class Main{
             }
 
 
-        } while (command != 'q' && correctMathQuestions != 5 && correctProgrammingQuestions != 5);
+        } while (command != 'q' && correctMathQuestions != 5 && correctProgrammingQuestions != 5 && correctGrammarQuestions != 5);
 
         if (correctMathQuestions == 5){
             percent = (correctMathQuestions * 100.0f) / questionsAnswered;
@@ -163,7 +202,11 @@ public class Main{
             percent = (correctProgrammingQuestions * 100.0f) / questionsAnswered;
             System.out.printf("\nCongratulations! You got %d questions right out of %d!\n\n", correctProgrammingQuestions, questionsAnswered);
         }
-        else { System.out.printf("\nGame over...\n "); }
+        else if (correctGrammarQuestions == 5){
+            System.out.printf("\nCongratulations! you got %d questions right out of %d!\n\n", correctGrammarQuestions, questionsAnswered);
+        }
+        
+        System.out.printf("\n\n////////////////////\n/// Game over... ///\n////////////////////\n");
 
 
         console.close(); // used to close console input
