@@ -47,3 +47,4 @@ This file contains all of the questions and answers for the programming question
 * *Version 1.0.3* - Updated look for Programming questions to better the user experience
 * *Version 1.0.4* - Completed Programming methods and questions
 * *Version 1.0.5* - Added user readability to math method in Main.java as well as making sure that a user can exit the math quiz in the same manner as exiting the programming quiz
+* *Version 1.0.6* - Grammar questions have been updated and completed. Nice look and adds to the app. Best looking questions.
