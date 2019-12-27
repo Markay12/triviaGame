@@ -6,6 +6,7 @@ Trivia Game to Test your Skills in certain Subjects
 * [Class Files](https://github.com/Markay12/triviaGame#class-files)
 * [Possible Additions](https://github.com/Markay12/triviaGame#possible-additions)
 * [Version Updates](https://github.com/Markay12/triviaGame#version-updates)
+* [GitHub]()
 
 
 ## *Class Files*
@@ -48,3 +49,8 @@ This file contains all of the questions and answers for the programming question
 * *Version 1.0.4* - Completed Programming methods and questions
 * *Version 1.0.5* - Added user readability to math method in Main.java as well as making sure that a user can exit the math quiz in the same manner as exiting the programming quiz
 * *Version 1.0.6* - Grammar questions have been updated and completed. Nice look and adds to the app. Best looking questions.
+
+
+## *GitHub*
+---
+* [![Run on Repl.it](https://repl.it/badge/github/Markay12/triviaGame)](https://repl.it/github/Markay12/triviaGame)
