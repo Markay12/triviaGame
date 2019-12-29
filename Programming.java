@@ -6,10 +6,12 @@ public class Programming{
     private char choice;
 
     public Programming(){
+		
+		// instance variables that are never used
 
         answer = this.answer;
         choice = this.choice;
-
+		
     }
 
     public int programRandomNum(){
