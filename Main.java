@@ -7,9 +7,11 @@ public class Main{
         int questionsAnswered = 0;
         int correctProgrammingQuestions = 0;
         int correctGrammarQuestions = 0;
+		int correctMusicQuestions = 0;
+		int currentMusicQuestion = 0;
         float percent;
         int quit = 0;
-
+		
         
         // to set and create names for the player
         
@@ -174,7 +176,39 @@ public class Main{
                     } while (correctGrammarQuestions != 5);
 
                     break;
-                    
+					
+				case 'u':
+				
+					do{
+						Music musicQuest = new Music();
+						currentMusicQuestion++;
+						System.out.print("\n[Enter 00 to QUIT]\n");
+						System.out.print(musicQuest.getQuestion(currentMusicQuestion));
+						int answer = console.nextInt();
+						if (musicQuest.checkAnswer(currentMusicQuestion, answer)){
+							correctMusicQuestions++;
+							questionsAnswered++;
+							if (correctMusicQuestions == 5){
+								System.out.print("\nAwesome! You got 5 music questions right!\n");
+								break;
+							}
+							if (correctMusicQuestions < 5){
+								System.out.printf("\n---------------------------------------------\nCorrect! You have %d right! Only %d more to go!\n---------------------------------------------\n", correctMusicQuestions, 5 -   correctMusicQuestions);
+							}
+							else { System.out.print("\n\nCorrect!\n\n"); }
+						}
+						else if (answer == 00){
+							System.out.print("\n\n[ENTER 'q' to quit out of the game]\n\n");
+							break;
+						}
+						else {
+							questionsAnswered++;
+							System.out.print("\nDarn, that's not quite it\n");
+						}
+						
+					} while (correctMusicQuestions != 5);
+						
+					break;
 
                 case '?': 
                     // prints the trivia menu for the user
