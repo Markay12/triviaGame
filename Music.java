@@ -23,6 +23,12 @@ public class Music{
 			return "\n[Choose the correct corresponding Number]\n\nWhich musical instrument has black and white keys?\n-------------------------\n\n1.) Guitar\n2.) Piano\n3.) Saxophone\n\n[ANSWER]: ";
 			
 		}
+		if (questionNum == 4){
+			return "\n[Input the correct Amount]\n\nHow many Tuba's are there in an orchestra?\n-------------------------\n\n[ANSWER]: ";
+		}
+		if (questionNum == 5){
+			return "\n[Input the correct Number]\n\nHow many valves are on a standard Bb Trumpet?\n\n[ANSWER]: ";
+		}
 		else { return ""; }
 		
 	}
@@ -49,6 +55,17 @@ public class Music{
 				return true;
 			}
 			else { return false; }
+		}
+		if (questionNum == 4){
+			if (answer == 1){
+				return true;
+			}
+			else { return false; }
+		}
+		if (questionNum == 5){
+			if (answer == 3){
+				return true;
+			}
 		}
 		else { return false; }
 		
