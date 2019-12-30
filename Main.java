@@ -9,6 +9,7 @@ public class Main{
         int correctGrammarQuestions = 0;
 		int correctMusicQuestions = 0;
 		int currentMusicQuestion = 0;
+		int wrongQuestions = 0;
         float percent;
         int quit = 0;
 		
@@ -77,9 +78,10 @@ public class Main{
                         } 
                         else {
                             questionsAnswered++;
+							wrongQuestions++;
                             System.out.println("\n------------------------\nDarn, thats not quite it\n------------------------\n");
                         }
-                    } while (correctMathQuestions != 5);
+                    } while (correctMathQuestions != 5 && wrongQuestions != 3);
 
                     break;
 
@@ -112,6 +114,9 @@ public class Main{
 
                         }
                         else {
+							
+							wrongQuestions++;
+							
                             if (programAnswer != 3 && randomProgrammingQuestion != 3 && randomProgrammingQuestion != 8 && randomProgrammingQuestion != 10){
                                 questionsAnswered++;
                                 System.out.println("\nDarn, that's not quite it");
@@ -135,7 +140,7 @@ public class Main{
                         }
 
 
-                    } while (correctProgrammingQuestions != 5 && quit != 1);
+                    } while (correctProgrammingQuestions != 5 && quit != 1 && wrongQuestions != 3);
 
                     break;
 
@@ -167,13 +172,16 @@ public class Main{
                             break;
                         }
                         else {
+							
+							wrongQuestions++;
+							
                             questionsAnswered++;
                             System.out.print("\nDarn, that's not quite it\n");
                         }
 
 
 
-                    } while (correctGrammarQuestions != 5);
+                    } while (correctGrammarQuestions != 5 && wrongQuestions != 3);
 
                     break;
 					
@@ -202,11 +210,14 @@ public class Main{
 							break;
 						}
 						else {
+							
+							wrongQuestions++;
+							
 							questionsAnswered++;
 							System.out.print("\nDarn, that's not quite it\n");
 						}
 						
-					} while (correctMusicQuestions != 5);
+					} while (correctMusicQuestions != 5 && wrongQuestions != 3);
 						
 					break;
 
@@ -239,6 +250,9 @@ public class Main{
         else if (correctGrammarQuestions == 5){
             System.out.printf("\nCongratulations! you got %d questions right out of %d!\n\n", correctGrammarQuestions, questionsAnswered);
         }
+		else if (wrongQuestions == 3){
+			System.out.print("\nDarn. You got 3 questions wrong and failed this quiz. Feel free to start this program again")
+		}
         
         System.out.printf("\n\n////////////////////\n/// Game over... ///\n////////////////////\n");
 
